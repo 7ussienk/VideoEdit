@@ -1,0 +1,9 @@
+.env
+uploads/
+output/
+assets/fonts/
+assets/music.mp3
+__pycache__/
+*.pyc
+temp_*
+*.tmp

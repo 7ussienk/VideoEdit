@@ -1,0 +1,35 @@
+{
+  "captions": {
+    "font": "Cairo Bold",
+    "fontPath": "assets/fonts/Cairo-Bold.ttf",
+    "fontSize": 52,
+    "primaryColor": "#FFFFFF",
+    "outlineColor": "#000000",
+    "outlineWidth": 3,
+    "backColor": "#FFFFFF",
+    "backOpacity": 0.25,
+    "position": "bottom-center",
+    "marginBottom": 80,
+    "rtl": true,
+    "defaultLanguage": "ar"
+  },
+  "watermark": {
+    "path": "assets/logo.png",
+    "position": "top-right",
+    "marginX": 20,
+    "marginY": 20,
+    "scalePercent": 15,
+    "opacity": 0.85
+  },
+  "music": {
+    "enabled": false,
+    "path": "assets/music.mp3",
+    "volume": 0.10
+  },
+  "output": {
+    "format": "mp4",
+    "videoBitrate": "4000k",
+    "audioBitrate": "192k",
+    "maxDurationSeconds": 120
+  }
+}
