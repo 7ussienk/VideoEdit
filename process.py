@@ -10,10 +10,17 @@ from dotenv import load_dotenv
 from openai import OpenAI
 
 load_dotenv()
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 SCRIPT_DIR = Path(__file__).parent.resolve()
 theme = json.load(open(SCRIPT_DIR / "theme.json"))
+
+_client = None
+
+def _get_client():
+    global _client
+    if _client is None:
+        _client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+    return _client
 
 
 def validate_video(input_path):
@@ -54,7 +61,7 @@ def extract_audio(input_path):
 
 def transcribe(audio_path, language="ar"):
     with open(audio_path, "rb") as f:
-        response = client.audio.transcriptions.create(
+        response = _get_client().audio.transcriptions.create(
             model="whisper-1",
             file=f,
             response_format="verbose_json",
